@@ -5,16 +5,16 @@
     <title>Quizz App</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
+    <script src="game.js"></script>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
 
-<body>
+<body onload="nextQuestion()">
     <h1>The awesome HTML Quiz</h1>
     <div class="card">
-        <div class="card-body">
+        <div class="card-body" id="question">
             In diesem Abschnitt wird eine Frage gestellt.
         </div>
     </div>
