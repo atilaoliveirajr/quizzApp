@@ -13,6 +13,14 @@
 
 <body onload="nextQuestion()">
     <h1>The awesome HTML Quiz</h1>
+
+    <div id="correctAnswer" class="alert alert-success d-none" role="alert">
+        Die Antwort war richtig!
+    </div>
+    <div id="wrongAnswer" class="alert alert-danger d-none" role="alert">
+        Die Antwort war leider falsch.
+    </div>
+
     <div class="card">
         <div class="card-body" id="question">
             In diesem Abschnitt wird eine Frage gestellt.
@@ -20,11 +28,10 @@
     </div>
 
     <div class="mt-2">
-        <button class="btn btn-primary">Antowort A</button>
-        <button class="btn btn-primary">Antowort B</button>
-        <button class="btn btn-primary">Antowort C</button>
-        <button class="btn btn-primary">Antowort D</button>
-        <button class="btn btn-primary">Antowort E</button>
+        <button onclick="answer(1)" id="answer1" class="btn btn-primary">Antowort A</button>
+        <button onclick="answer(2)" id="answer2" class="btn btn-primary">Antowort B</button>
+        <button onclick="answer(3)" id="answer3" class="btn btn-primary">Antowort C</button>
+        <button onclick="answer(4)" id="answer4" class="btn btn-primary">Antowort D</button>
     </div>
     das hier ist ein <a href="#">Link!</a>
 
