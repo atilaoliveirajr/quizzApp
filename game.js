@@ -16,51 +16,26 @@ let progress = 0;
 let rightAnswer;
 
 function nextQuestion() {
+    hideElements();
+
     questionNumber += 1;
     progress = questionNumber * 10;
+
     document.getElementById(`progressBar`).innerHTML = `${progress}%`;
     document.getElementById(`progressBar`).style.width = `${progress}%`;
 
     //Answers Controller
     switch (questionNumber) {
         case 1:
-            {
-                document.getElementById(`question`).innerHTML = question1;
-                document.getElementById(`answer1`).innerHTML = question1Answer1;
-                document.getElementById(`answer2`).innerHTML = question1Answer2;
-                document.getElementById(`answer3`).innerHTML = question1Answer3;
-                document.getElementById(`answer4`).innerHTML = question1Answer4;
-                rightAnswer = 3;
-            }
+            loadQuestion1();
             break;
 
         case 2:
-            {
-                document.getElementById(`question`).innerHTML = question2;
-                document.getElementById(`answer1`).innerHTML = question2Answer1;
-                document.getElementById(`answer2`).innerHTML = question2Answer2;
-                document.getElementById(`answer3`).innerHTML = question2Answer3;
-                document.getElementById(`answer4`).innerHTML = question2Answer4;
-                rightAnswer = 3;
-            }
-            break;
-
-        case 3:
-            document.getElementById(`question`).innerHTML = question2;
-            break;
-
-        case 4:
-            document.getElementById(`question`).innerHTML = question2;
+            loadQuestion2();
             break;
 
     }
 
-    // Questions Controller
-    if (document.getElementById(`question`).innerHTML == question1) {
-        document.getElementById(`question`).innerHTML = question2;
-    } else {
-        document.getElementById(`question`).innerHTML = question1;
-    }
 }
 
 function answer(a) {
@@ -76,4 +51,27 @@ function answer(a) {
         document.getElementById(`wrongAnswer`).classList.remove(`d-none`)
         document.getElementById(`correctAnswer`).classList.add(`d-none`)
     }
+}
+
+function hideElements() {
+    document.getElementById(`correctAnswer`).classList.add(`d-none`);
+    document.getElementById(`nextBtn`).classList.add(`d-none`)
+}
+
+function loadQuestion1() {
+    document.getElementById(`question`).innerHTML = question1;
+    document.getElementById(`answer1`).innerHTML = question1Answer1;
+    document.getElementById(`answer2`).innerHTML = question1Answer2;
+    document.getElementById(`answer3`).innerHTML = question1Answer3;
+    document.getElementById(`answer4`).innerHTML = question1Answer4;
+    rightAnswer = 3;
+}
+
+function loadQuestion2() {
+    document.getElementById(`question`).innerHTML = question2;
+    document.getElementById(`answer1`).innerHTML = question2Answer1;
+    document.getElementById(`answer2`).innerHTML = question2Answer2;
+    document.getElementById(`answer3`).innerHTML = question2Answer3;
+    document.getElementById(`answer4`).innerHTML = question2Answer4;
+    rightAnswer = 3;
 }
